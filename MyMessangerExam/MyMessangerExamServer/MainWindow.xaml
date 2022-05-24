@@ -1,0 +1,89 @@
+﻿<Window x:Class="MyMessangerExamServer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MyMessangerExamServer"
+        mc:Ignorable="d"
+        xmlns:emoji="clr-namespace:Emoji.Wpf;assembly=Emoji.Wpf"
+        xmlns:tb="http://www.hardcodet.net/taskbar"
+   
+        Title="Server" Height="450" Width="800" Icon="/Resources/server.png"  x:Name="WindowServer">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <tb:TaskbarIcon x:Name="TbIInfo"
+              IconSource="/Resources/server.ico"
+            ToolTipText="Ofline" TrayMouseDoubleClick="TbIInfo_TrayMouseDoubleClick">
+            <tb:TaskbarIcon.TrayPopup>
+                <Border x:Name="brdrTaskbarIcon" Background="White" BorderBrush="Orange" BorderThickness="2" CornerRadius="4" Visibility="Hidden">
+                    <ScrollViewer Style="{StaticResource FavsScrollViewer}">
+                        <ListBox x:Name="tasklbOnlain">
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <WrapPanel>
+                                        <TextBlock Text="{Binding GetUser.Name}" />
+                                    </WrapPanel>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                    </ScrollViewer>
+                </Border>
+            </tb:TaskbarIcon.TrayPopup>
+            <tb:TaskbarIcon.ContextMenu>
+                <ContextMenu FontSize="14" MaxHeight="120">
+                    <ContextMenu.Template>
+                        <ControlTemplate TargetType="ContextMenu">
+                            <Border Background="#FF1F2C39" CornerRadius="3" Padding="3" HorizontalAlignment="Center">
+                                <ItemsPresenter/>
+                            </Border>
+                        </ControlTemplate>
+                    </ContextMenu.Template>
+                    <ContextMenu.ItemContainerStyle>
+                        <Style TargetType="MenuItem">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="MenuItem">
+                                        <Border x:Name="brdrMenuItem" Margin="2" Background="#FF1F2C39">
+                                            <ContentPresenter ContentSource="Header"/>
+                                        </Border>
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter TargetName="brdrMenuItem" Property="Background" Value="#FF7C49EF"></Setter>
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </ContextMenu.ItemContainerStyle>
+                    <MenuItem x:Name="mItOpen" Header="Згорнути" Foreground="Beige" Click="mItOpen_Click"/>
+                    <MenuItem x:Name="mItClose" Header="❌ Закрити" Foreground="Beige" Click="mItClose_Click"/>
+                </ContextMenu>
+            </tb:TaskbarIcon.ContextMenu>
+        </tb:TaskbarIcon>
+        <StackPanel>
+            <!--<GroupBox Header="IP address" Grid.ColumnSpan="2">
+                <TextBox x:Name="tbIp" FontSize="16"></TextBox>
+            </GroupBox>-->
+            <GroupBox Header="Port">
+                <TextBox x:Name="tbPort" FontSize="16"></TextBox>
+            </GroupBox>
+            <Button x:Name="btnStart" Click="btnStart_Click" Grid.ColumnSpan="2" Margin="0 2 0 0">Start</Button>
+            <Button x:Name="btnStop"  Click="btnStop_Click" Grid.RowSpan="2" Margin="0 2 0 0">Stop</Button>
+        </StackPanel>
+        <TabControl Grid.Column="1" FontSize="18">
+            <TabItem Header="Онлайн">
+                <ListBox x:Name="lbOnlineUser" ItemTemplate="{StaticResource LBViewOnline}"/>
+            </TabItem>
+            <TabItem Header="Всі користувачі">
+                <StackPanel>
+                    <Button Click="Button_Click">Save Change</Button>
+                    <ListBox x:Name="lbAllUser" ItemTemplate="{StaticResource LBViewAll}"/>
+                </StackPanel>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

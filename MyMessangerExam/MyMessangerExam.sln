@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32414.318
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyMessangerExamClient", "MyMessangerExam\MyMessangerExamClient.csproj", "{BAD11F04-1D94-4997-ABA7-75DAC9CA4AF8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Library", "Library", "{BD20C3C5-D25B-4F6E-BCCC-5F3B7ED0828B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryMessage", "LibraryMessage\LibraryMessage.csproj", "{3E73C30E-0078-4D03-8E61-A5908714AD83}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServerUserConnection", "ServerUserConnection\ServerUserConnection.csproj", "{253B83C6-58BF-45D0-9F2E-975828E0BB43}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyMessangerExamServer", "MyMessangerExamServer\MyMessangerExamServer.csproj", "{94273934-F7CE-47CA-BE7E-D90153B4E1BA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DB", "DB", "{2E88392A-2B11-4F3C-A361-85CD64F882BC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DbEntities", "DbEntities", "{1FCBE8C4-8CC3-43F4-B500-F1798DB9FF6C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryDb", "LibraryDb\LibraryDb.csproj", "{A9F5E816-9C90-4C74-A7A1-5316E720CCFD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BAD11F04-1D94-4997-ABA7-75DAC9CA4AF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAD11F04-1D94-4997-ABA7-75DAC9CA4AF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAD11F04-1D94-4997-ABA7-75DAC9CA4AF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAD11F04-1D94-4997-ABA7-75DAC9CA4AF8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E73C30E-0078-4D03-8E61-A5908714AD83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E73C30E-0078-4D03-8E61-A5908714AD83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E73C30E-0078-4D03-8E61-A5908714AD83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E73C30E-0078-4D03-8E61-A5908714AD83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{253B83C6-58BF-45D0-9F2E-975828E0BB43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{253B83C6-58BF-45D0-9F2E-975828E0BB43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{253B83C6-58BF-45D0-9F2E-975828E0BB43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{253B83C6-58BF-45D0-9F2E-975828E0BB43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94273934-F7CE-47CA-BE7E-D90153B4E1BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94273934-F7CE-47CA-BE7E-D90153B4E1BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94273934-F7CE-47CA-BE7E-D90153B4E1BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94273934-F7CE-47CA-BE7E-D90153B4E1BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9F5E816-9C90-4C74-A7A1-5316E720CCFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9F5E816-9C90-4C74-A7A1-5316E720CCFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9F5E816-9C90-4C74-A7A1-5316E720CCFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9F5E816-9C90-4C74-A7A1-5316E720CCFD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3E73C30E-0078-4D03-8E61-A5908714AD83} = {BD20C3C5-D25B-4F6E-BCCC-5F3B7ED0828B}
+		{253B83C6-58BF-45D0-9F2E-975828E0BB43} = {BD20C3C5-D25B-4F6E-BCCC-5F3B7ED0828B}
+		{1FCBE8C4-8CC3-43F4-B500-F1798DB9FF6C} = {2E88392A-2B11-4F3C-A361-85CD64F882BC}
+		{A9F5E816-9C90-4C74-A7A1-5316E720CCFD} = {1FCBE8C4-8CC3-43F4-B500-F1798DB9FF6C}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3B595A3B-E8E5-47F9-99DF-0751C095095B}
+	EndGlobalSection
+EndGlobal

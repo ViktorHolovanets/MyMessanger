@@ -1,0 +1,7 @@
+UserConnection , MyMessage  - допоміжні класи для мого меседжера.
+udpVideo = new ClientServerUdp(45454, 45454, res); -  відео
+udpAudio = new ClientServerUdp(45100, 45100, res); - аудіо - передаю абсолютні порти(незнаю як задати не абсолютні)
+
+
+
+а взагалі я  трохи переробив з metanit.

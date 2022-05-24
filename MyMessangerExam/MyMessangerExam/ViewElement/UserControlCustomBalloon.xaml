@@ -1,0 +1,40 @@
+﻿<UserControl x:Class="MyMessangerExam.ViewElement.UserControlCustomBalloon"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MyMessangerExam.ViewElement"
+             mc:Ignorable="d" 
+             d:DesignHeight="200" d:DesignWidth="400">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../DictionaryMessanger.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Border MaxWidth="300" Background="#FF3B4669" CornerRadius="10" Padding="10">
+        <Grid >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.15*"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.2*"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="0.2*"/>
+                </Grid.ColumnDefinitions>
+                <Image Source="/Resources/messanger.ico"></Image>
+                <TextBlock Grid.Column="1" Text="Нове повідомлення" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16" Foreground="White" Margin="3 0 3 0"></TextBlock>
+                <Button Grid.Column="2"  Template="{StaticResource Smile}" Background="Red" Click="Button_Click"  FontFamily="Arial Black" Width="20" Height="20" Margin="0 0 0 0"
+                        HorizontalAlignment="Center" VerticalAlignment="Center">✖</Button>
+            </Grid>
+            <WrapPanel Grid.Row="1" Margin="5" >
+                <Image x:Name="UserImage" Width="30" Height="30" HorizontalAlignment="Left"></Image>
+                <TextBlock x:Name="Username" FontSize="20" Foreground="White"></TextBlock>
+            </WrapPanel>
+        </Grid>
+    </Border>
+    
+</UserControl>

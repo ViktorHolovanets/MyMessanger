@@ -1,0 +1,6 @@
+F:\Network programming\MyMessangerExam\LibraryMessage\bin\Debug\LibraryMessage.dll
+F:\Network programming\MyMessangerExam\LibraryMessage\bin\Debug\LibraryMessage.pdb
+F:\Network programming\MyMessangerExam\LibraryMessage\obj\Debug\LibraryMessage.csproj.AssemblyReference.cache
+F:\Network programming\MyMessangerExam\LibraryMessage\obj\Debug\LibraryMessage.csproj.CoreCompileInputs.cache
+F:\Network programming\MyMessangerExam\LibraryMessage\obj\Debug\LibraryMessage.dll
+F:\Network programming\MyMessangerExam\LibraryMessage\obj\Debug\LibraryMessage.pdb

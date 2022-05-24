@@ -1,0 +1,8 @@
+F:\Network programming\MyMessangerExam\ConsoleApp1\bin\Debug\ConsoleApp1.exe.config
+F:\Network programming\MyMessangerExam\ConsoleApp1\bin\Debug\ConsoleApp1.exe
+F:\Network programming\MyMessangerExam\ConsoleApp1\bin\Debug\ConsoleApp1.pdb
+F:\Network programming\MyMessangerExam\ConsoleApp1\obj\Debug\ConsoleApp1.csproj.AssemblyReference.cache
+F:\Network programming\MyMessangerExam\ConsoleApp1\obj\Debug\ConsoleApp1.csproj.SuggestedBindingRedirects.cache
+F:\Network programming\MyMessangerExam\ConsoleApp1\obj\Debug\ConsoleApp1.csproj.CoreCompileInputs.cache
+F:\Network programming\MyMessangerExam\ConsoleApp1\obj\Debug\ConsoleApp1.exe
+F:\Network programming\MyMessangerExam\ConsoleApp1\obj\Debug\ConsoleApp1.pdb

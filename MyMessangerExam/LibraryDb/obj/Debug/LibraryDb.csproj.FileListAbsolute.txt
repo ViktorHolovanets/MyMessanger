@@ -1,0 +1,14 @@
+F:\Network programming\MyMessangerExam\LibraryDb\bin\Debug\LibraryDb.dll.config
+F:\Network programming\MyMessangerExam\LibraryDb\bin\Debug\LibraryDb.dll
+F:\Network programming\MyMessangerExam\LibraryDb\bin\Debug\LibraryDb.pdb
+F:\Network programming\MyMessangerExam\LibraryDb\bin\Debug\EntityFramework.dll
+F:\Network programming\MyMessangerExam\LibraryDb\bin\Debug\EntityFramework.SqlServer.dll
+F:\Network programming\MyMessangerExam\LibraryDb\bin\Debug\LibraryMessage.dll
+F:\Network programming\MyMessangerExam\LibraryDb\bin\Debug\LibraryMessage.pdb
+F:\Network programming\MyMessangerExam\LibraryDb\bin\Debug\EntityFramework.xml
+F:\Network programming\MyMessangerExam\LibraryDb\bin\Debug\EntityFramework.SqlServer.xml
+F:\Network programming\MyMessangerExam\LibraryDb\obj\Debug\LibraryDb.csproj.AssemblyReference.cache
+F:\Network programming\MyMessangerExam\LibraryDb\obj\Debug\LibraryDb.csproj.CoreCompileInputs.cache
+F:\Network programming\MyMessangerExam\LibraryDb\obj\Debug\LibraryDb.csproj.CopyComplete
+F:\Network programming\MyMessangerExam\LibraryDb\obj\Debug\LibraryDb.dll
+F:\Network programming\MyMessangerExam\LibraryDb\obj\Debug\LibraryDb.pdb
