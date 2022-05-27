@@ -15,6 +15,8 @@ namespace LibraryDb
         public int Id { get; set; }
         [Required]
         public string Name { get; set; }
+        [Index(IsUnique = true)]
+        [StringLength(200)]
         [Required]
         public string Login { get; set; }
         [Required]

@@ -29,3 +29,34 @@ F:\Network programming\MyMessangerExam\ServerUserConnection\bin\Debug\Microsoft.
 F:\Network programming\MyMessangerExam\ServerUserConnection\bin\Debug\NAudio.xml
 F:\Network programming\MyMessangerExam\ServerUserConnection\bin\Debug\System.Security.AccessControl.xml
 F:\Network programming\MyMessangerExam\ServerUserConnection\bin\Debug\System.Security.Principal.Windows.xml
+F:\MyMessanger\MyMessanger\MyMessangerExam\ServerUserConnection\bin\Debug\ServerUserConnection.dll.config
+F:\MyMessanger\MyMessanger\MyMessangerExam\ServerUserConnection\bin\Debug\ServerUserConnection.dll
+F:\MyMessanger\MyMessanger\MyMessangerExam\ServerUserConnection\bin\Debug\ServerUserConnection.pdb
+F:\MyMessanger\MyMessanger\MyMessangerExam\ServerUserConnection\bin\Debug\EntityFramework.dll
+F:\MyMessanger\MyMessanger\MyMessangerExam\ServerUserConnection\bin\Debug\EntityFramework.SqlServer.dll
+F:\MyMessanger\MyMessanger\MyMessangerExam\ServerUserConnection\bin\Debug\LibraryDb.dll
+F:\MyMessanger\MyMessanger\MyMessangerExam\ServerUserConnection\bin\Debug\LibraryMessage.dll
+F:\MyMessanger\MyMessanger\MyMessangerExam\ServerUserConnection\bin\Debug\Microsoft.Win32.Registry.dll
+F:\MyMessanger\MyMessanger\MyMessangerExam\ServerUserConnection\bin\Debug\NAudio.Asio.dll
+F:\MyMessanger\MyMessanger\MyMessangerExam\ServerUserConnection\bin\Debug\NAudio.Core.dll
+F:\MyMessanger\MyMessanger\MyMessangerExam\ServerUserConnection\bin\Debug\NAudio.dll
+F:\MyMessanger\MyMessanger\MyMessangerExam\ServerUserConnection\bin\Debug\NAudio.Midi.dll
+F:\MyMessanger\MyMessanger\MyMessangerExam\ServerUserConnection\bin\Debug\NAudio.Wasapi.dll
+F:\MyMessanger\MyMessanger\MyMessangerExam\ServerUserConnection\bin\Debug\NAudio.WinForms.dll
+F:\MyMessanger\MyMessanger\MyMessangerExam\ServerUserConnection\bin\Debug\NAudio.WinMM.dll
+F:\MyMessanger\MyMessanger\MyMessangerExam\ServerUserConnection\bin\Debug\System.Security.AccessControl.dll
+F:\MyMessanger\MyMessanger\MyMessangerExam\ServerUserConnection\bin\Debug\System.Security.Principal.Windows.dll
+F:\MyMessanger\MyMessanger\MyMessangerExam\ServerUserConnection\bin\Debug\LibraryDb.pdb
+F:\MyMessanger\MyMessanger\MyMessangerExam\ServerUserConnection\bin\Debug\LibraryDb.dll.config
+F:\MyMessanger\MyMessanger\MyMessangerExam\ServerUserConnection\bin\Debug\LibraryMessage.pdb
+F:\MyMessanger\MyMessanger\MyMessangerExam\ServerUserConnection\bin\Debug\EntityFramework.xml
+F:\MyMessanger\MyMessanger\MyMessangerExam\ServerUserConnection\bin\Debug\EntityFramework.SqlServer.xml
+F:\MyMessanger\MyMessanger\MyMessangerExam\ServerUserConnection\bin\Debug\Microsoft.Win32.Registry.xml
+F:\MyMessanger\MyMessanger\MyMessangerExam\ServerUserConnection\bin\Debug\NAudio.xml
+F:\MyMessanger\MyMessanger\MyMessangerExam\ServerUserConnection\bin\Debug\System.Security.AccessControl.xml
+F:\MyMessanger\MyMessanger\MyMessangerExam\ServerUserConnection\bin\Debug\System.Security.Principal.Windows.xml
+F:\MyMessanger\MyMessanger\MyMessangerExam\ServerUserConnection\obj\Debug\ServerUserConnection.csproj.AssemblyReference.cache
+F:\MyMessanger\MyMessanger\MyMessangerExam\ServerUserConnection\obj\Debug\ServerUserConnection.csproj.CoreCompileInputs.cache
+F:\MyMessanger\MyMessanger\MyMessangerExam\ServerUserConnection\obj\Debug\ServerUserConnection.csproj.CopyComplete
+F:\MyMessanger\MyMessanger\MyMessangerExam\ServerUserConnection\obj\Debug\ServerUserConnection.dll
+F:\MyMessanger\MyMessanger\MyMessangerExam\ServerUserConnection\obj\Debug\ServerUserConnection.pdb

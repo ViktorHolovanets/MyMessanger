@@ -12,3 +12,17 @@ F:\Network programming\MyMessangerExam\LibraryDb\obj\Debug\LibraryDb.csproj.Core
 F:\Network programming\MyMessangerExam\LibraryDb\obj\Debug\LibraryDb.csproj.CopyComplete
 F:\Network programming\MyMessangerExam\LibraryDb\obj\Debug\LibraryDb.dll
 F:\Network programming\MyMessangerExam\LibraryDb\obj\Debug\LibraryDb.pdb
+F:\MyMessanger\MyMessanger\MyMessangerExam\LibraryDb\bin\Debug\LibraryDb.dll.config
+F:\MyMessanger\MyMessanger\MyMessangerExam\LibraryDb\bin\Debug\LibraryDb.dll
+F:\MyMessanger\MyMessanger\MyMessangerExam\LibraryDb\bin\Debug\LibraryDb.pdb
+F:\MyMessanger\MyMessanger\MyMessangerExam\LibraryDb\bin\Debug\EntityFramework.dll
+F:\MyMessanger\MyMessanger\MyMessangerExam\LibraryDb\bin\Debug\EntityFramework.SqlServer.dll
+F:\MyMessanger\MyMessanger\MyMessangerExam\LibraryDb\bin\Debug\LibraryMessage.dll
+F:\MyMessanger\MyMessanger\MyMessangerExam\LibraryDb\bin\Debug\LibraryMessage.pdb
+F:\MyMessanger\MyMessanger\MyMessangerExam\LibraryDb\bin\Debug\EntityFramework.xml
+F:\MyMessanger\MyMessanger\MyMessangerExam\LibraryDb\bin\Debug\EntityFramework.SqlServer.xml
+F:\MyMessanger\MyMessanger\MyMessangerExam\LibraryDb\obj\Debug\LibraryDb.csproj.AssemblyReference.cache
+F:\MyMessanger\MyMessanger\MyMessangerExam\LibraryDb\obj\Debug\LibraryDb.csproj.CoreCompileInputs.cache
+F:\MyMessanger\MyMessanger\MyMessangerExam\LibraryDb\obj\Debug\LibraryDb.csproj.CopyComplete
+F:\MyMessanger\MyMessanger\MyMessangerExam\LibraryDb\obj\Debug\LibraryDb.dll
+F:\MyMessanger\MyMessanger\MyMessangerExam\LibraryDb\obj\Debug\LibraryDb.pdb

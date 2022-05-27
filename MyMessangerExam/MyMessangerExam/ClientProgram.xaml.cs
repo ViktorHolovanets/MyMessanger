@@ -244,6 +244,10 @@ namespace MyMessangerExam
                       
 
                         break;
+                    case 404:
+                        DisconnectToServer();
+                        MessageBox.Show("Disconnect to server", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                        break;
                     default:
                         break;
                 }
@@ -263,12 +267,15 @@ namespace MyMessangerExam
             test.UserImage.Source = MyFunction.ConvertBytesToImage(user.AvatarContact);
             TbIInfo.ShowCustomBalloon(test, System.Windows.Controls.Primitives.PopupAnimation.Slide, 10000);
         }
-        private void btnDisconnect_Click(object sender, RoutedEventArgs e)
+        private void btnDisconnect_Click(object sender, RoutedEventArgs e) => DisconnectToServer();
+
+
+        void DisconnectToServer()
         {
-            client?.SendMessage(new MyMessage() { TypeMessage = -1, UserFrom_Id = messageRespon.user.Id });
+            if (messageRespon != null)
+                client?.SendMessage(new MyMessage() { TypeMessage = -1, UserFrom_Id = messageRespon.user.Id });
             client?.CloseConnection();
             lbContacts.ItemsSource = null;
-            // lbMessanger.ItemsSource = null;
             messageRespon = null;
             spConnect.IsEnabled = true;
             btnDisconnect.IsEnabled = false;

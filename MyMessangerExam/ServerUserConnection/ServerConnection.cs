@@ -169,8 +169,15 @@ namespace ServerUserConnection
                 if (message.IsNewUser)
                 {
                     newConnect = new User() { Name = message.Name, Login = message.Login, Password = message.Password, Avatar = message.Avatar };
-                    dbMessanger.Users.Add(newConnect);
-                    dbMessanger.SaveChanges();
+                    try
+                    {
+                        dbMessanger.Users.Add(newConnect);
+                        dbMessanger.SaveChanges();
+                    }
+                    catch (Exception)
+                    {
+                        user.SendMessage(new MyMessage() { TypeMessage = 404 }); return;
+                    }                    
                     newClientConnected(newConnect);
                     user.GetUser = newConnect;                    
                     var result = new MySystemMessageRespon() { user = newConnect };
@@ -183,7 +190,7 @@ namespace ServerUserConnection
                     newConnect = dbMessanger.Users?.FirstOrDefault(x => x.Login == message.Login && x.Password == message.Password);
                     if (newConnect == null)
                     {
-                        user.CloseConnection();
+                        user.SendMessage(new MyMessage() { TypeMessage = 404 });
                         return;
                     }
                     List<MyMessage> userMessage = dbMessanger.Messages.Where(x => x.UserTo_Id == newConnect.Id || x.UserFrom_Id == newConnect.Id)?.ToList();
