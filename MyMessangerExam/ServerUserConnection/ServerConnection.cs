@@ -186,7 +186,6 @@ namespace ServerUserConnection
                 }
                 else
                 {
-
                     newConnect = dbMessanger.Users?.FirstOrDefault(x => x.Login == message.Login && x.Password == message.Password);
                     if (newConnect == null)
                     {

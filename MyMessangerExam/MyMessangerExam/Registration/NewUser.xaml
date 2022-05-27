@@ -6,6 +6,12 @@
              xmlns:local="clr-namespace:MyMessangerExam.Registration"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+    </UserControl.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -25,15 +31,15 @@
             <StackPanel Grid.Column="1">
                 <TextBox Width="200" x:Name="Name"></TextBox>
                 <TextBox Width="200" x:Name="Login"></TextBox>
-                <PasswordBox Width="200" x:Name="Password" ></PasswordBox>
+                <PasswordBox Width="200" x:Name="Password"  Margin="5,0,5,5"></PasswordBox>
                 <PasswordBox Width="200" x:Name="Password1"></PasswordBox>
-                <Button x:Name="btnLoadAvatar" Margin="5" Click="btnLoadAvatar_Click" >Avatar</Button>
+                <Button x:Name="btnLoadAvatar" Margin="5" Click="btnLoadAvatar_Click" Template="{DynamicResource Smile}">Avatar</Button>
             </StackPanel>
 
         </Grid>
         <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1">
-            <Button Margin="5" Width="50" Click="Button_ClickOk">Ok</Button>
-            <Button Margin="5" Width="50" Click="Button_ClickCancel">Cancel</Button>
+            <Button Margin="5" Click="Button_ClickOk" Template="{DynamicResource Smile}" FontSize="25" Background="Transparent" ToolTip="Ok">✔</Button>
+            <Button Margin="5" Click="Button_ClickCancel" Template="{DynamicResource Smile}" FontSize="25" Background="Transparent" ToolTip="Clear">❌</Button>
         </WrapPanel>
 
     </Grid>

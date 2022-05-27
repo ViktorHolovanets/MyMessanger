@@ -17,8 +17,8 @@
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Column="0">
-                <TextBlock>Login</TextBlock>
-                <TextBlock>Password</TextBlock>
+                <TextBlock Foreground="White">Login</TextBlock>
+                <TextBlock Foreground="White">Password</TextBlock>
             </StackPanel>
             <StackPanel Grid.Column="1">
                 <TextBox Width="200" x:Name="tbLogin"></TextBox>
@@ -27,8 +27,8 @@
 
         </Grid>
         <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1">
-            <Button Margin="5" Width="50" Click="Button_ClickOk">Ok</Button>
-            <Button Margin="5" Width="50" Click="Button_ClickCancel">Cancel</Button>
+            <Button Margin="5" Width="50" Click="Button_ClickOk" Template="{DynamicResource Smile}" FontSize="25" Background="Transparent" ToolTip="Ok">✔</Button>
+            <Button Margin="5" Width="50" Click="Button_ClickCancel" Template="{DynamicResource Smile}" FontSize="25" Background="Transparent" ToolTip="Close">❌</Button>
         </WrapPanel>
 
     </Grid>

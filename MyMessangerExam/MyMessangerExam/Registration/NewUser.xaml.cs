@@ -55,7 +55,14 @@ namespace MyMessangerExam.Registration
             
         }
 
-        private void Button_ClickCancel(object sender, RoutedEventArgs e) => user.Info.Children.Clear();
+        private void Button_ClickCancel(object sender, RoutedEventArgs e)
+        {
+            bytes = null;
+            Name.Text = "";
+            Login.Text = "";
+            Password.Password = "";
+            Password1.Password = "";
+        }
 
         private void btnLoadAvatar_Click(object sender, RoutedEventArgs e)
         {

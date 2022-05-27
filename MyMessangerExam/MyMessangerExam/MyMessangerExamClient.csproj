@@ -129,6 +129,9 @@
     <Compile Include="ViewElement\VideoCall.xaml.cs">
       <DependentUpon>VideoCall.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewElement\VideoCallCustomBalloonUserControl.xaml.cs">
+      <DependentUpon>VideoCallCustomBalloonUserControl.xaml</DependentUpon>
+    </Compile>
     <Page Include="DictionaryMessanger.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -166,6 +169,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ViewElement\VideoCall.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewElement\VideoCallCustomBalloonUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

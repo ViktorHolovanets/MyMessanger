@@ -6,13 +6,6 @@
              xmlns:local="clr-namespace:MyMessangerExam.ViewElement"
              mc:Ignorable="d" 
              d:DesignHeight="200" d:DesignWidth="400">
-    <UserControl.Resources>
-        <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="../DictionaryMessanger.xaml"/>
-            </ResourceDictionary.MergedDictionaries>
-        </ResourceDictionary>
-    </UserControl.Resources>
     <Border MaxWidth="300" Background="#FF3B4669" CornerRadius="10" Padding="10">
         <Grid >
             <Grid.RowDefinitions>

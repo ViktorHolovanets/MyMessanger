@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-F:\Network programming\MyMessangerExam\MyMessangerExam\obj\Debug\
+F:\MyMessanger\MyMessanger\MyMessangerExam\MyMessangerExam\obj\Debug\
 MyMessangerExam
 none
 false
 DEBUG;TRACE
-F:\Network programming\MyMessangerExam\MyMessangerExam\App.xaml
-8-1815796418
+F:\MyMessanger\MyMessanger\MyMessangerExam\MyMessangerExam\App.xaml
+9971779150
 
-121614930167
-37-1696230423
-DictionaryMessanger.xaml;ClientProgram.xaml;Registration\NewUser.xaml;Registration\UserConnectionReg.xaml;Registration\UserEnter.xaml;ViewElement\UserControlCustomBalloon.xaml;ViewElement\UserControlViewMessage.xaml;ViewElement\VideoCall.xaml;
+13-943228689
+372025260614
+DictionaryMessanger.xaml;ClientProgram.xaml;Registration\NewUser.xaml;Registration\UserConnectionReg.xaml;Registration\UserEnter.xaml;ViewElement\UserControlCustomBalloon.xaml;ViewElement\UserControlViewMessage.xaml;ViewElement\VideoCall.xaml;ViewElement\VideoCallCustomBalloonUserControl.xaml;
 
-False
+True
 

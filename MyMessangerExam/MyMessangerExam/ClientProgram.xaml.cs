@@ -225,14 +225,14 @@ namespace MyMessangerExam
                     case 4:                      
                         if (IsVideoCall == false)
                         {
-                            IsVideoCall = true;
-                            Task.Run(() =>
+                            VideoCallCustomBalloonUserControl videoCall = new VideoCallCustomBalloonUserControl();
+                            videoCall.AcceptVideoCall+=()=> Task.Run(() =>
                             {
                                 VideoCall GetVideoCall = null;
                                 void c1()
                                 {
                                     GetVideoCall = new VideoCall(client, m);
-                                    GetVideoCall.TheEnd+=()=> IsVideoCall=false;
+                                    GetVideoCall.TheEnd += () => IsVideoCall = false;
                                     GetVideoCall.Show();
                                     TheEndVideoCall += GetVideoCall.Close;
                                 }
@@ -240,8 +240,16 @@ namespace MyMessangerExam
                                     Dispatcher.Invoke(c1);
                                 else c1();
                             });
+                            IsVideoCall = true;
+                            videoCall.AcceptVideoCall += () => Task.Run(() =>
+                            {
+                                
+                            });
                         }
-                      
+                        else
+                        {
+
+                        }
 
                         break;
                     case 404:
@@ -257,6 +265,8 @@ namespace MyMessangerExam
             else c();
 
         }
+
+
 
         private void ShowInfoNewMessage(int IdUser)
         {

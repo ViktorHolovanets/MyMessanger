@@ -41,7 +41,7 @@ namespace MyMessangerExam.ViewElement {
     public partial class UserControlCustomBalloon : System.Windows.Controls.UserControl, System.Windows.Markup.IComponentConnector {
         
         
-        #line 34 "..\..\..\ViewElement\UserControlCustomBalloon.xaml"
+        #line 27 "..\..\..\ViewElement\UserControlCustomBalloon.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Image UserImage;
         
@@ -49,7 +49,7 @@ namespace MyMessangerExam.ViewElement {
         #line hidden
         
         
-        #line 35 "..\..\..\ViewElement\UserControlCustomBalloon.xaml"
+        #line 28 "..\..\..\ViewElement\UserControlCustomBalloon.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBlock Username;
         
@@ -88,7 +88,7 @@ namespace MyMessangerExam.ViewElement {
             {
             case 1:
             
-            #line 30 "..\..\..\ViewElement\UserControlCustomBalloon.xaml"
+            #line 23 "..\..\..\ViewElement\UserControlCustomBalloon.xaml"
             ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.Button_Click);
             
             #line default
