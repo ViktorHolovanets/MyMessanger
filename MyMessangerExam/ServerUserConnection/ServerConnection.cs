@@ -28,13 +28,6 @@ namespace ServerUserConnection
         private object db = new object();
         BinaryFormatter bf = new BinaryFormatter();
         MemoryStream ms;
-        //public ServerConnection(string ip, int port, string dbConnect)
-        //{
-        //    endPoint = new IPEndPoint(IPAddress.Parse(ip), port);
-        //    listener = null;
-        //    IsWorker = true;
-        //    dbMessanger = new DbMessanger(dbConnect);
-        //}
         public ServerConnection(int port, string dbConnect)
         {
             endPoint = new IPEndPoint(IPAddress.Any, port);
