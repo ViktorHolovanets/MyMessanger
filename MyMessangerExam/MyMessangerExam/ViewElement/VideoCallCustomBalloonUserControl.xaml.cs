@@ -27,8 +27,16 @@ namespace MyMessangerExam.ViewElement
             InitializeComponent();
         }
 
-        private void btnAccept_Click(object sender, RoutedEventArgs e) => AcceptVideoCall?.Invoke();
+        private void btnAccept_Click(object sender, RoutedEventArgs e)
+        {
+            AcceptVideoCall?.Invoke();
+            Visibility = Visibility.Collapsed;
+        }
 
-        private void btnReject_Click(object sender, RoutedEventArgs e) => RejectVideoCall?.Invoke();
+        private void btnReject_Click(object sender, RoutedEventArgs e)
+        {
+            RejectVideoCall?.Invoke();
+            Visibility = Visibility.Collapsed;
+        }
     }
 }

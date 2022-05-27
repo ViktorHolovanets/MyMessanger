@@ -150,13 +150,13 @@ namespace ServerUserConnection
             string ipTo = IPAddress.Parse(((IPEndPoint)userConnections[1].ClientConnection.Client.RemoteEndPoint).Address.ToString()).ToString();
             string ipToLocal = IPAddress.Parse(((IPEndPoint)userConnections[1].ClientConnection.Client.LocalEndPoint).Address.ToString()).ToString();
             if (ipFrom == "127.0.0.1")
-                SendToMessage(new MyMessage() { TypeMessage = 4, Content = MyFunction.ConvertToBytes(ipToLocal), UserTo_Id = userConnections[1].GetUser.Id , UserFrom_Id= userConnections[0].GetUser.Id });
+                SendToMessage(new MyMessage() { TypeMessage = 4, Content = MyFunction.ConvertToBytes(ipToLocal), UserTo_Id = userConnections[1].GetUser.Id, UserFrom_Id = userConnections[0].GetUser.Id, IsMyMessage = true }); 
             else
-                SendToMessage(new MyMessage() { TypeMessage = 4, Content = MyFunction.ConvertToBytes(ipFrom), UserTo_Id = userConnections[1].GetUser.Id, UserFrom_Id = userConnections[0].GetUser.Id });
+                SendToMessage(new MyMessage() { TypeMessage = 4, Content = MyFunction.ConvertToBytes(ipFrom), UserTo_Id = userConnections[1].GetUser.Id, UserFrom_Id = userConnections[0].GetUser.Id, IsMyMessage = true });
             if (ipTo == "127.0.0.1")
-                SendToMessage(new MyMessage() { TypeMessage = 4, Content = MyFunction.ConvertToBytes(ipFromLocal), UserTo_Id = userConnections[0].GetUser.Id , UserFrom_Id = userConnections[1].GetUser.Id });
+                SendToMessage(new MyMessage() { TypeMessage = 4, Content = MyFunction.ConvertToBytes(ipFromLocal), UserTo_Id = userConnections[0].GetUser.Id , UserFrom_Id = userConnections[1].GetUser.Id, IsMyMessage = false });
             else
-                SendToMessage(new MyMessage() { TypeMessage = 4, Content = MyFunction.ConvertToBytes(ipTo), UserTo_Id = userConnections[0].GetUser.Id, UserFrom_Id = userConnections[1].GetUser.Id });
+                SendToMessage(new MyMessage() { TypeMessage = 4, Content = MyFunction.ConvertToBytes(ipTo), UserTo_Id = userConnections[0].GetUser.Id, UserFrom_Id = userConnections[1].GetUser.Id, IsMyMessage = false });
         }
 
         private void EntryUser(MySystemMessageQuery message, UserConnection user)

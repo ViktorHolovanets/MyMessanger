@@ -90,10 +90,10 @@ namespace MyMessangerExam.ViewElement
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             Client?.SendMessage(new MyMessage() { TypeMessage = -4, UserFrom_Id = Client.GetUser.Id, UserTo_Id = Friend_Id });
-            udpVideo.Shutdown();
-            voiceMessage.StopVoiceMessage();
+            udpVideo?.Shutdown();
+            voiceMessage?.StopVoiceMessage();
             _videoCaptureDevice?.SignalToStop();
-            TheEnd?.Invoke();
+            TheEnd?.Invoke();      
         }
 
         private void _videoCaptureDevice_NewFrame(object sender, AForge.Video.NewFrameEventArgs eventArgs)

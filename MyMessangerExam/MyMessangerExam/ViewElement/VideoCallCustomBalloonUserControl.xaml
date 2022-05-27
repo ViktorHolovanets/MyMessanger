@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MyMessangerExam.ViewElement"
              mc:Ignorable="d" 
-             d:DesignHeight="200" d:DesignWidth="400">
+             d:DesignHeight="400" d:DesignWidth="400">
     <Border MaxWidth="300" Background="#FF3B4669" CornerRadius="10" Padding="10">
         <Grid >
             <Grid.RowDefinitions>
@@ -20,8 +20,8 @@
                 </Grid.ColumnDefinitions>
                 <Image Source="/Resources/messanger.ico"></Image>
                 <TextBlock Grid.Column="1" Text="Відеовиклик" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16" Foreground="White" Margin="3 0 3 0"></TextBlock>
-                <Button Grid.Column="2"  Template="{StaticResource Smile}" Background="Red" Click="Button_Click"  FontFamily="Arial Black" Width="20" Height="20" Margin="0 0 0 0"
-                        HorizontalAlignment="Center" VerticalAlignment="Center">✖</Button>
+                <Button Grid.Column="2"  Template="{StaticResource Smile}" Background="Red" FontFamily="Arial Black" Width="20" Height="20" Margin="0 0 0 0"
+                        HorizontalAlignment="Center" VerticalAlignment="Center" Click="btnReject_Click">✖</Button>
             </Grid>
             <StackPanel Grid.Row="1">
                 <WrapPanel  Margin="5" >
@@ -29,8 +29,8 @@
                     <TextBlock x:Name="Username" FontSize="20" Foreground="White"></TextBlock>
                 </WrapPanel>
                 <WrapPanel HorizontalAlignment="Center">
-                    <Button x:Name="btnAccept" Click="btnAccept_Click">Прийняти</Button>
-                    <Button x:Name="btnReject" Click="btnReject_Click">Відхилити</Button>
+                    <Button x:Name="btnAccept" Click="btnAccept_Click" Template="{StaticResource Smile}" Foreground="white" Background="Green" Margin="5">Прийняти</Button>
+                    <Button x:Name="btnReject" Click="btnReject_Click" Template="{StaticResource Smile}" Foreground="white" Background="Red" Margin="5">Відхилити</Button>
                 </WrapPanel>
             </StackPanel>
             

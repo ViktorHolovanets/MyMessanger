@@ -225,8 +225,7 @@ namespace MyMessangerExam
                     case 4:                      
                         if (IsVideoCall == false)
                         {
-                            VideoCallCustomBalloonUserControl videoCall = new VideoCallCustomBalloonUserControl();
-                            videoCall.AcceptVideoCall+=()=> Task.Run(() =>
+                            if (!m.IsMyMessage)
                             {
                                 VideoCall GetVideoCall = null;
                                 void c1()
@@ -239,18 +238,37 @@ namespace MyMessangerExam
                                 if (!Dispatcher.CheckAccess())
                                     Dispatcher.Invoke(c1);
                                 else c1();
-                            });
-                            IsVideoCall = true;
-                            videoCall.AcceptVideoCall += () => Task.Run(() =>
-                            {
-                                
-                            });
+                            }
+                            else {
+                                var test = new VideoCallCustomBalloonUserControl();
+                                var user = messageRespon.users.FirstOrDefault(u => u.Id == m.UserFrom_Id);
+                                test.Username.Text = user.Name;
+                                test.UserImage.Source = MyFunction.ConvertBytesToImage(user.AvatarContact);
+                                test.AcceptVideoCall += () => Task.Run(() =>
+                                {
+                                    VideoCall GetVideoCall = null;
+                                    void c1()
+                                    {
+                                        GetVideoCall = new VideoCall(client, m);
+                                        GetVideoCall.TheEnd += () => IsVideoCall = false;
+                                        GetVideoCall.Show();
+                                        TheEndVideoCall += GetVideoCall.Close;
+                                    }
+                                    if (!Dispatcher.CheckAccess())
+                                        Dispatcher.Invoke(c1);
+                                    else c1();
+                                });
+                                IsVideoCall = true;
+                                int userId = m.UserFrom_Id;
+                                test.RejectVideoCall += () => Task.Run(() =>
+                                {
+                                    client?.SendMessage(new MyMessage() { TypeMessage = -4, UserTo_Id = userId, UserFrom_Id = messageRespon.user.Id });
+                                });
+                                TbIInfo.ShowCustomBalloon(test, System.Windows.Controls.Primitives.PopupAnimation.Slide, 100000);
+                            }
+                            
                         }
-                        else
-                        {
-
-                        }
-
+                        
                         break;
                     case 404:
                         DisconnectToServer();
