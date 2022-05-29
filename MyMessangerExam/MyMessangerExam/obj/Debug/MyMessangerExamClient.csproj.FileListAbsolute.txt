@@ -134,3 +134,5 @@ F:\MyMessanger\MyMessanger\MyMessangerExam\MyMessangerExam\obj\Debug\MyMessanger
 F:\MyMessanger\MyMessanger\MyMessangerExam\MyMessangerExam\obj\Debug\MyMessangerExamClient.csproj.CopyComplete
 F:\MyMessanger\MyMessanger\MyMessangerExam\MyMessangerExam\obj\Debug\MyMessangerExam.exe
 F:\MyMessanger\MyMessanger\MyMessangerExam\MyMessangerExam\obj\Debug\MyMessangerExam.pdb
+F:\MyMessanger\MyMessanger\MyMessangerExam\MyMessangerExam\obj\Debug\ViewElement\VideoCallCustomBalloonUserControl.g.cs
+F:\MyMessanger\MyMessanger\MyMessangerExam\MyMessangerExam\obj\Debug\ViewElement\VideoCallCustomBalloonUserControl.baml

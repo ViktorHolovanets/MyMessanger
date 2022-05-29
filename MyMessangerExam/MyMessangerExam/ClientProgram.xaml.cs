@@ -126,7 +126,9 @@ namespace MyMessangerExam
 
         private void ViewMessageContact(MyMessage item)
         {
+            if (item.TypeMessage == 2) return;
             UserControlViewMessage userControlViewMessage = new UserControlViewMessage();
+            userControlViewMessage.DelMessage += UserControlViewMessage_DelMessage;
             if (item.UserFrom_Id == messageRespon.user.Id)
             {
                 userControlViewMessage.stpMessage.Background = new SolidColorBrush(Color.FromRgb(105, 99, 239));
@@ -148,9 +150,14 @@ namespace MyMessangerExam
             if (!Dispatcher.CheckAccess())
                 Dispatcher.Invoke(c);
             else c();
-
         }
 
+        private void UserControlViewMessage_DelMessage(MyMessage obj)
+        {
+            if (obj.UserFrom_Id != messageRespon.user.Id) return;
+            obj.TypeMessage = 5;
+            client?.SendMessage(obj);
+        }
 
         void ChangeColorChat(int n)
         {
@@ -167,40 +174,52 @@ namespace MyMessangerExam
                 }
             }
         }
+        void ConnectionServer(MyMessage m)
+        {
+            BinaryFormatter bf = new BinaryFormatter();
+            using (MemoryStream ms = new MemoryStream(m.Content))
+            {
+                messageRespon = bf.Deserialize(ms) as MySystemMessageRespon;
+            }
+            if (messageRespon != null)
+            {
 
+                if (messageRespon.users != null)
+                    lbContacts.ItemsSource = messageRespon.users.ToList();
+                else messageRespon.users = new List<UserContact>();
+                if (messageRespon.messages == null)
+                    messageRespon.messages = new List<MyMessage>();
+                Username.Text = messageRespon.user.Name;
+                NumberUser.Text = messageRespon.user.Id.ToString();
+                client.GetUser = messageRespon.user;
+                MemoryStream byteStream = new MemoryStream(messageRespon.user.Avatar);
+                BitmapImage image = new BitmapImage();
+                image.BeginInit();
+                image.StreamSource = byteStream;
+                image.EndInit();
+                UserImage.Source = image;
+            }
+            else client.CloseConnection();
+        }
+        void NewFriend(MyMessage m)
+        {
+            BinaryFormatter bf = new BinaryFormatter();
+            List<UserContact> res;
+            using (MemoryStream ms = new MemoryStream(m.Content))
+            {
+                res = bf.Deserialize(ms) as List<UserContact>;
+            }
+            messageRespon.users.AddRange(res.Where(usc => usc.Id != messageRespon.user.Id));
+            lbContacts.ItemsSource = messageRespon.users.ToList();
+        }
         void AddMessage(MyMessage m)
         {
-
-            BinaryFormatter bf = new BinaryFormatter();
-            //
             void c()
             {
                 switch (m.TypeMessage)
                 {
                     case 0:
-                        using (MemoryStream ms = new MemoryStream(m.Content))
-                        {
-                            messageRespon = bf.Deserialize(ms) as MySystemMessageRespon;
-                        }
-                        if (messageRespon != null)
-                        {
-
-                            if (messageRespon.users != null)
-                                lbContacts.ItemsSource = messageRespon.users.ToList();
-                            else messageRespon.users = new List<UserContact>();
-                            if (messageRespon.messages == null)
-                                messageRespon.messages = new List<MyMessage>();
-                            Username.Text = messageRespon.user.Name;
-                            NumberUser.Text = messageRespon.user.Id.ToString();
-                            client.GetUser = messageRespon.user;
-                            MemoryStream byteStream = new MemoryStream(messageRespon.user.Avatar);
-                            BitmapImage image = new BitmapImage();
-                            image.BeginInit();
-                            image.StreamSource = byteStream;
-                            image.EndInit();
-                            UserImage.Source = image;
-                        }
-                        else client.CloseConnection();
+                        ConnectionServer(m);
                         break;
                     case 1:
                     case 3:
@@ -210,65 +229,25 @@ namespace MyMessangerExam
                         ShowInfoNewMessage(m.UserFrom_Id);
                         break;
                     case 2:
-                        List<UserContact> res;
-                        using (MemoryStream ms = new MemoryStream(m.Content))
-                        {
-                            res = bf.Deserialize(ms) as List<UserContact>;
-                        }
-                        messageRespon.users.AddRange(res.Where(usc => usc.Id != messageRespon.user.Id));
-                        lbContacts.ItemsSource = messageRespon.users.ToList();
+                        NewFriend(m);
                         break;
                     case -4:
                         TheEndVideoCall?.Invoke();
                         TheEndVideoCall = null;
                         break;
-                    case 4:                      
+                    case 4:
                         if (IsVideoCall == false)
                         {
                             if (!m.IsMyMessage)
-                            {
-                                VideoCall GetVideoCall = null;
-                                void c1()
-                                {
-                                    GetVideoCall = new VideoCall(client, m);
-                                    GetVideoCall.TheEnd += () => IsVideoCall = false;
-                                    GetVideoCall.Show();
-                                    TheEndVideoCall += GetVideoCall.Close;
-                                }
-                                if (!Dispatcher.CheckAccess())
-                                    Dispatcher.Invoke(c1);
-                                else c1();
-                            }
-                            else {
-                                var test = new VideoCallCustomBalloonUserControl();
-                                var user = messageRespon.users.FirstOrDefault(u => u.Id == m.UserFrom_Id);
-                                test.Username.Text = user.Name;
-                                test.UserImage.Source = MyFunction.ConvertBytesToImage(user.AvatarContact);
-                                test.AcceptVideoCall += () => Task.Run(() =>
-                                {
-                                    VideoCall GetVideoCall = null;
-                                    void c1()
-                                    {
-                                        GetVideoCall = new VideoCall(client, m);
-                                        GetVideoCall.TheEnd += () => IsVideoCall = false;
-                                        GetVideoCall.Show();
-                                        TheEndVideoCall += GetVideoCall.Close;
-                                    }
-                                    if (!Dispatcher.CheckAccess())
-                                        Dispatcher.Invoke(c1);
-                                    else c1();
-                                });
-                                IsVideoCall = true;
-                                int userId = m.UserFrom_Id;
-                                test.RejectVideoCall += () => Task.Run(() =>
-                                {
-                                    client?.SendMessage(new MyMessage() { TypeMessage = -4, UserTo_Id = userId, UserFrom_Id = messageRespon.user.Id });
-                                });
-                                TbIInfo.ShowCustomBalloon(test, System.Windows.Controls.Primitives.PopupAnimation.Slide, 100000);
-                            }
-                            
+                                ConnectedVieoCall(m);
+                            else
+                                NewConnectedVieoCall(m);
                         }
-                        
+                        break;
+                    case 5:
+                        var tmp = messageRespon.messages.First(M => m.Id == M.Id);
+                        messageRespon.messages.Remove(tmp);
+                        ViewMessanger();
                         break;
                     case 404:
                         DisconnectToServer();
@@ -283,9 +262,34 @@ namespace MyMessangerExam
             else c();
 
         }
-
-
-
+        // Вхідний дзвінок
+        void NewConnectedVieoCall(MyMessage m)
+        {
+            var test = new VideoCallCustomBalloonUserControl();
+            var user = messageRespon.users.FirstOrDefault(u => u.Id == m.UserFrom_Id);
+            test.Username.Text = user.Name;
+            test.UserImage.Source = MyFunction.ConvertBytesToImage(user.AvatarContact);
+            test.AcceptVideoCall += () => Task.Factory.StartNew((o) => ConnectedVieoCall(o as MyMessage), m);
+            IsVideoCall = true;
+            int userId = m.UserFrom_Id;
+            test.RejectVideoCall += () => Task.Run(() => client?.SendMessage(new MyMessage() { TypeMessage = -4, UserTo_Id = userId, UserFrom_Id = messageRespon.user.Id }));
+            TbIInfo.ShowCustomBalloon(test, System.Windows.Controls.Primitives.PopupAnimation.Slide, 100000);
+        }
+        // Вихідний дзінок
+        void ConnectedVieoCall(MyMessage m)
+        {
+            VideoCall GetVideoCall = null;
+            void c1()
+            {
+                GetVideoCall = new VideoCall(client, m);
+                GetVideoCall.TheEnd += () => IsVideoCall = false;
+                GetVideoCall.Show();
+                TheEndVideoCall += GetVideoCall.Close;
+            }
+            if (!Dispatcher.CheckAccess())
+                Dispatcher.Invoke(c1);
+            else c1();
+        }
         private void ShowInfoNewMessage(int IdUser)
         {
             if (IdUser == messageRespon.user.Id) return;
@@ -405,5 +409,6 @@ namespace MyMessangerExam
                 client.SendMessage(new MyMessage() { TypeMessage = 4, UserFrom_Id = messageRespon.user.Id, UserTo_Id = friend.Id });
             }
         }
+
     }
 }

@@ -8,8 +8,12 @@
              mc:Ignorable="d" 
              d:DesignHeight="250" d:DesignWidth="350">
     <Border CornerRadius="5" Margin="5" Padding="5" x:Name="stpMessage" >
-
         <StackPanel >
+            <StackPanel.ContextMenu>
+                <ContextMenu>
+                    <MenuItem x:Name="contextMenuDeleteMessage"  Header="Видалити" Click="contextMenuDeleteMessage_Click"></MenuItem>
+                </ContextMenu>
+            </StackPanel.ContextMenu>
             <WrapPanel>
                 <Border CornerRadius="2">
                     <Image x:Name="AvatarUser" Width="25" Height="25"></Image>

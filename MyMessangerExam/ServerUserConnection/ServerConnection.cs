@@ -71,24 +71,25 @@ namespace ServerUserConnection
         }
         public void ShutDownServer()
         {
-
             clients?.Clear();
             clients = null;
             listener?.Stop();
         }
-
+        void AddMessageDB(MyMessage myMessage)
+        {
+            lock (db)
+            {
+                dbMessanger.Messages.Add(myMessage);
+                dbMessanger.SaveChanges();
+            }
+        }
+        void AddMessageDBTask(MyMessage myMessage)
+        {
+            Task.Factory.StartNew((o) => AddMessageDB(o as MyMessage), myMessage);
+        }
         public void SendToMessage(MyMessage myMessage)
         {
             if (dbMessanger.Users.FirstOrDefault(u => u.Id == myMessage.UserFrom_Id).IsBlackList) return;
-            Task.Run(() =>
-            {
-                lock (db)
-                {
-                    if (myMessage.TypeMessage == 4|| myMessage.TypeMessage == -4) return;
-                    dbMessanger.Messages.Add(myMessage);
-                    dbMessanger.SaveChanges();
-                }
-            });
             UserConnection FromCont = clients.FirstOrDefault(c => c.GetUser.Id == myMessage.UserFrom_Id);
             UserConnection ToCont = clients.FirstOrDefault(c => c.GetUser.Id == myMessage.UserTo_Id);
             if (myMessage.TypeMessage != 4)
@@ -108,8 +109,11 @@ namespace ServerUserConnection
                     MySystemMessageQuery res = bf.Deserialize(ms) as MySystemMessageQuery;
                     EntryUser(res, user);
                     break;
-                case 1:
+                case 1:    
                 case 3:
+                    AddMessageDB(obj);
+                    SendToMessage(obj);
+                    break;
                 case -4:
                     SendToMessage(obj);
                     break;
@@ -123,13 +127,28 @@ namespace ServerUserConnection
                     bf.Serialize(ms, contacts);
                     ms.Position = 0;
                     obj.Content = ms.ToArray();
+                    AddMessageDB(obj);
                     SendToMessage(obj); break;
                 case 4:
                     UdpClientConnection(obj);
                     break;
+                case 5:
+                    DelMessage(obj);
+                    break;
                 default:
                     break;
             }
+        }
+
+        private void DelMessage(MyMessage obj)
+        {
+            lock (db)
+            {
+                var tmpmessage = dbMessanger.Messages.First(m => m.Id == obj.Id);
+                dbMessanger.Messages.Remove(tmpmessage);
+                dbMessanger.SaveChanges();
+            }
+            SendToMessage(obj);
         }
 
         private async void UdpClientConnection(MyMessage obj)

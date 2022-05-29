@@ -27,12 +27,15 @@ namespace MyMessangerExam.ViewMessage
     /// </summary>
     public partial class UserControlViewMessage : UserControl
     {
+        MyMessage message;
+        public event Action<MyMessage> DelMessage;
         public UserControlViewMessage()
         {
             InitializeComponent();
         }
         public void AddContent(MyMessage message)
-        {
+        {            
+            this.message = message;
             BinaryFormatter bf = new BinaryFormatter();
             MemoryStream ms = null;
             if (message.Content != null)
@@ -65,7 +68,7 @@ namespace MyMessangerExam.ViewMessage
                             btn.Content = $"{item.NameFile}";
                             btn.FontSize = 15;
                             btn.Tag = item;
-                            btn.MouseDoubleClick += Button_MouseDoubleClick;
+                            btn.MouseDown += Button_MouseDown;
                             btn.MaxHeight = 100;
                             btn.MaxWidth = 100;
                             wrpContentMessage.Children.Add(btn);
@@ -88,7 +91,7 @@ namespace MyMessangerExam.ViewMessage
             }
 
         }
-        private void Button_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        private void Button_MouseDown(object sender, MouseButtonEventArgs e)
         {
             FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog();
             if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
@@ -97,6 +100,12 @@ namespace MyMessangerExam.ViewMessage
                 MessageFile file = (MessageFile)content;
                 File.WriteAllBytes(Path.Combine(folderBrowserDialog.SelectedPath, file.NameFile), file.ContentFile);
             }
+        }
+
+        private void contextMenuDeleteMessage_Click(object sender, RoutedEventArgs e)
+        {
+            if (message != null) 
+                DelMessage?.Invoke(message);
         }
     }
 }

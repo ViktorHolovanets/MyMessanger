@@ -4,3 +4,9 @@ F:\Network programming\MyMessangerExam\LibraryMessage\obj\Debug\LibraryMessage.c
 F:\Network programming\MyMessangerExam\LibraryMessage\obj\Debug\LibraryMessage.csproj.CoreCompileInputs.cache
 F:\Network programming\MyMessangerExam\LibraryMessage\obj\Debug\LibraryMessage.dll
 F:\Network programming\MyMessangerExam\LibraryMessage\obj\Debug\LibraryMessage.pdb
+F:\MyMessanger\MyMessanger\MyMessangerExam\LibraryMessage\bin\Debug\LibraryMessage.dll
+F:\MyMessanger\MyMessanger\MyMessangerExam\LibraryMessage\bin\Debug\LibraryMessage.pdb
+F:\MyMessanger\MyMessanger\MyMessangerExam\LibraryMessage\obj\Debug\LibraryMessage.csproj.AssemblyReference.cache
+F:\MyMessanger\MyMessanger\MyMessangerExam\LibraryMessage\obj\Debug\LibraryMessage.csproj.CoreCompileInputs.cache
+F:\MyMessanger\MyMessanger\MyMessangerExam\LibraryMessage\obj\Debug\LibraryMessage.dll
+F:\MyMessanger\MyMessanger\MyMessangerExam\LibraryMessage\obj\Debug\LibraryMessage.pdb

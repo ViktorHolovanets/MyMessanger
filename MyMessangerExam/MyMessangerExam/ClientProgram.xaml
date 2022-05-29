@@ -127,14 +127,7 @@
                         <Border Background="#FF26365D" Padding="10" CornerRadius="10 0 0 10">
                             <ScrollViewer x:Name="scrollViewer" VerticalScrollBarVisibility="Auto" Style="{StaticResource FavsScrollViewer}" Background="AliceBlue">
                                 <StackPanel x:Name="lbMessanger">
-                                    <!--<StackPanel.ContextMenu>
-                                        <ContextMenu>
-                                            <MenuItem Header="1"></MenuItem>
-                                            <MenuItem Header="2"></MenuItem>
-                                            <MenuItem Header="3"></MenuItem>
-                                            <MenuItem Header="4"></MenuItem>
-                                        </ContextMenu>
-                                    </StackPanel.ContextMenu>-->
+                                    
                                 </StackPanel>
                             </ScrollViewer>
                         </Border>
