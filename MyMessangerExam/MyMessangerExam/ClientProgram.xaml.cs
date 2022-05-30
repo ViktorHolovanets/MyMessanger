@@ -29,9 +29,10 @@ namespace MyMessangerExam
     {
         bool? IsVideoCall = false;
         private UserConnection client;
+        // набір данних від сервера: повідомлення, друзі і інформація про акаунт
         MySystemMessageRespon messageRespon;
         private IPEndPoint endPoint;
-        //VideoCall GetVideoCall;
+       //  завершення відеовиклику
         event Action TheEndVideoCall;
         public MainWindow()
         {
@@ -46,7 +47,7 @@ namespace MyMessangerExam
             client?.CloseConnection();
             Close();
         }
-
+        //  панель смайлів
         private void btnSmile_Click(object sender, RoutedEventArgs e)
         {
             if (popSmile.IsOpen)
@@ -101,6 +102,7 @@ namespace MyMessangerExam
             Visibility = Visibility.Visible;
             tiMessanger.IsEnabled = true;
         }
+        #region Views messages
         void ViewMessanger()
         {
             UserContact user = null;
@@ -151,14 +153,6 @@ namespace MyMessangerExam
                 Dispatcher.Invoke(c);
             else c();
         }
-
-        private void UserControlViewMessage_DelMessage(MyMessage obj)
-        {
-            if (obj.UserFrom_Id != messageRespon.user.Id) return;
-            obj.TypeMessage = 5;
-            client?.SendMessage(obj);
-        }
-
         void ChangeColorChat(int n)
         {
             foreach (var item in lbContacts.Items)
@@ -174,6 +168,17 @@ namespace MyMessangerExam
                 }
             }
         }
+        #endregion
+
+
+        private void UserControlViewMessage_DelMessage(MyMessage obj)
+        {
+            if (obj.UserFrom_Id != messageRespon.user.Id) return;
+            obj.TypeMessage = 5;
+            client?.SendMessage(obj);
+        }
+
+        
         void ConnectionServer(MyMessage m)
         {
             BinaryFormatter bf = new BinaryFormatter();
@@ -331,13 +336,14 @@ namespace MyMessangerExam
             }
 
         }
+        // додавання смайлів в полу вводу
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             tbMessage.Text += (sender as Button).Content.ToString();
         }
 
         private void lbContacts_SelectionChanged(object sender, SelectionChangedEventArgs e) => ViewMessanger();
-
+        //  додавання нового контакту
         private void btnNewContact_Click(object sender, RoutedEventArgs e)
         {
             int idNewCount;
