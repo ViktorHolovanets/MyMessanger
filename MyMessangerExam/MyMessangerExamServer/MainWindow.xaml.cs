@@ -45,8 +45,8 @@ namespace MyMessangerExamServer
         {
             void c()
             {
-                serverConnection.clients.Remove(obj);
-                if (serverConnection.clients.Count == 0)
+                serverConnection?.clients.Remove(obj);
+                if (serverConnection?.clients.Count == 0)
                     brdrTaskbarIcon.Visibility = Visibility.Hidden;
             }
             if (!Dispatcher.CheckAccess())
@@ -115,6 +115,7 @@ namespace MyMessangerExamServer
         {
             if (serverConnection == null) return;
             serverConnection.ShutDownServer();
+            serverConnection.clients?.Clear();
             serverConnection.IsWorker = false;
             btnStart.IsEnabled = true;
             serverConnection = null;

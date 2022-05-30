@@ -71,8 +71,10 @@ namespace ServerUserConnection
         }
         public void ShutDownServer()
         {
-            clients?.Clear();
-            clients = null;
+            foreach (var item in clients)
+            {
+                item?.SendMessage(new MyMessage() { TypeMessage = 404 });
+            }
             listener?.Stop();
         }
         void AddMessageDB(MyMessage myMessage)
@@ -90,8 +92,8 @@ namespace ServerUserConnection
         public void SendToMessage(MyMessage myMessage)
         {
             if (dbMessanger.Users.FirstOrDefault(u => u.Id == myMessage.UserFrom_Id).IsBlackList) return;
-            UserConnection FromCont = clients.FirstOrDefault(c => c.GetUser.Id == myMessage.UserFrom_Id);
-            UserConnection ToCont = clients.FirstOrDefault(c => c.GetUser.Id == myMessage.UserTo_Id);
+            UserConnection FromCont = clients?.FirstOrDefault(c => c.GetUser.Id == myMessage.UserFrom_Id);
+            UserConnection ToCont = clients?.FirstOrDefault(c => c.GetUser.Id == myMessage.UserTo_Id);
             if (myMessage.TypeMessage != 4)
                 FromCont?.SendMessage(myMessage);
             ToCont?.SendMessage(myMessage);
@@ -246,7 +248,7 @@ namespace ServerUserConnection
                 if (message == null) return;
                 NewMessageClient(message, client);
             }
-            clients.Remove(client);
+            //clients?.Remove(client);
             ClientDisconnected?.Invoke(client);
         }
 

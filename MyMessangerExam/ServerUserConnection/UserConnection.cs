@@ -80,7 +80,7 @@ namespace ServerUserConnection
         {
             if (client != null && client.Connected)
             {
-                formatter.Serialize(client.GetStream(), message);
+                formatter.Serialize(client?.GetStream(), message);
                 SystemMessage?.Invoke("Отправлено сообщение", message);
             }
         }

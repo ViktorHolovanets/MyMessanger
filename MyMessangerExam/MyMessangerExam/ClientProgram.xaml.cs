@@ -336,7 +336,7 @@ namespace MyMessangerExam
             }
 
         }
-        // додавання смайлів в полу вводу
+        // додавання смайлів в полі вводу
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             tbMessage.Text += (sender as Button).Content.ToString();

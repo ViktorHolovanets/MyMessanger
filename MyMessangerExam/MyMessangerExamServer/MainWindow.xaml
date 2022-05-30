@@ -72,7 +72,7 @@
                 <TextBox x:Name="tbPort" FontSize="16"></TextBox>
             </GroupBox>
             <Button x:Name="btnStart" Click="btnStart_Click" Grid.ColumnSpan="2" Margin="0 2 0 0">Start</Button>
-            <Button x:Name="btnStop"  Click="btnStop_Click" Grid.RowSpan="2" Margin="0 2 0 0">Stop</Button>
+            <Button x:Name="btnStop"  Click="btnStop_Click" Content="Stop"/>
         </StackPanel>
         <TabControl Grid.Column="1" FontSize="18">
             <TabItem Header="Онлайн">
