@@ -1,71 +1,3 @@
-F:\Network programming\MyMessangerExam\MyMessangerExam\bin\Debug\MyMessangerExam.exe.config
-F:\Network programming\MyMessangerExam\MyMessangerExam\bin\Debug\MyMessangerExam.exe
-F:\Network programming\MyMessangerExam\MyMessangerExam\bin\Debug\MyMessangerExam.pdb
-F:\Network programming\MyMessangerExam\MyMessangerExam\obj\Debug\MyMessangerExamClient.csproj.AssemblyReference.cache
-F:\Network programming\MyMessangerExam\MyMessangerExam\obj\Debug\MyMessangerExamClient.csproj.SuggestedBindingRedirects.cache
-F:\Network programming\MyMessangerExam\MyMessangerExam\obj\Debug\DictionaryMessanger.baml
-F:\Network programming\MyMessangerExam\MyMessangerExam\obj\Debug\App.g.cs
-F:\Network programming\MyMessangerExam\MyMessangerExam\obj\Debug\MyMessangerExam_MarkupCompile.cache
-F:\Network programming\MyMessangerExam\MyMessangerExam\obj\Debug\MyMessangerExam_MarkupCompile.lref
-F:\Network programming\MyMessangerExam\MyMessangerExam\obj\Debug\App.baml
-F:\Network programming\MyMessangerExam\MyMessangerExam\obj\Debug\MyMessangerExam.g.resources
-F:\Network programming\MyMessangerExam\MyMessangerExam\obj\Debug\MyMessangerExam.Properties.Resources.resources
-F:\Network programming\MyMessangerExam\MyMessangerExam\obj\Debug\MyMessangerExamClient.csproj.GenerateResource.cache
-F:\Network programming\MyMessangerExam\MyMessangerExam\obj\Debug\MyMessangerExamClient.csproj.CoreCompileInputs.cache
-F:\Network programming\MyMessangerExam\MyMessangerExam\obj\Debug\MyMessangerExam.exe
-F:\Network programming\MyMessangerExam\MyMessangerExam\obj\Debug\MyMessangerExam.pdb
-F:\Network programming\MyMessangerExam\MyMessangerExam\bin\Debug\ServerUserConnection.dll
-F:\Network programming\MyMessangerExam\MyMessangerExam\bin\Debug\LibraryMessage.dll
-F:\Network programming\MyMessangerExam\MyMessangerExam\bin\Debug\ServerUserConnection.pdb
-F:\Network programming\MyMessangerExam\MyMessangerExam\bin\Debug\LibraryMessage.pdb
-F:\Network programming\MyMessangerExam\MyMessangerExam\obj\Debug\MyMessangerExamClient.csproj.CopyComplete
-F:\Network programming\MyMessangerExam\MyMessangerExam\obj\Debug\Registration\NewUser.g.cs
-F:\Network programming\MyMessangerExam\MyMessangerExam\obj\Debug\Registration\UserConnectionReg.g.cs
-F:\Network programming\MyMessangerExam\MyMessangerExam\obj\Debug\Registration\UserEnter.g.cs
-F:\Network programming\MyMessangerExam\MyMessangerExam\obj\Debug\Registration\NewUser.baml
-F:\Network programming\MyMessangerExam\MyMessangerExam\obj\Debug\Registration\UserConnectionReg.baml
-F:\Network programming\MyMessangerExam\MyMessangerExam\obj\Debug\Registration\UserEnter.baml
-F:\Network programming\MyMessangerExam\MyMessangerExam\bin\Debug\LibraryDb.dll
-F:\Network programming\MyMessangerExam\MyMessangerExam\bin\Debug\EntityFramework.dll
-F:\Network programming\MyMessangerExam\MyMessangerExam\bin\Debug\LibraryDb.pdb
-F:\Network programming\MyMessangerExam\MyMessangerExam\bin\Debug\LibraryDb.dll.config
-F:\Network programming\MyMessangerExam\MyMessangerExam\bin\Debug\ServerUserConnection.dll.config
-F:\Network programming\MyMessangerExam\MyMessangerExam\bin\Debug\EntityFramework.xml
-F:\Network programming\MyMessangerExam\MyMessangerExam\bin\Debug\Emoji.Wpf.dll
-F:\Network programming\MyMessangerExam\MyMessangerExam\bin\Debug\System.ValueTuple.dll
-F:\Network programming\MyMessangerExam\MyMessangerExam\bin\Debug\Typography.GlyphLayout.dll
-F:\Network programming\MyMessangerExam\MyMessangerExam\bin\Debug\Typography.OpenFont.dll
-F:\Network programming\MyMessangerExam\MyMessangerExam\bin\Debug\System.ValueTuple.xml
-F:\Network programming\MyMessangerExam\MyMessangerExam\bin\Debug\Hardcodet.NotifyIcon.Wpf.dll
-F:\Network programming\MyMessangerExam\MyMessangerExam\bin\Debug\Hardcodet.NotifyIcon.Wpf.xml
-F:\Network programming\MyMessangerExam\MyMessangerExam\obj\Debug\ViewElement\UserControlCustomBalloon.g.cs
-F:\Network programming\MyMessangerExam\MyMessangerExam\obj\Debug\ViewElement\UserControlViewMessage.g.cs
-F:\Network programming\MyMessangerExam\MyMessangerExam\obj\Debug\ViewElement\UserControlCustomBalloon.baml
-F:\Network programming\MyMessangerExam\MyMessangerExam\obj\Debug\ViewElement\UserControlViewMessage.baml
-F:\Network programming\MyMessangerExam\MyMessangerExam\obj\Debug\ViewElement\VideoCall.g.cs
-F:\Network programming\MyMessangerExam\MyMessangerExam\bin\Debug\AForge.dll
-F:\Network programming\MyMessangerExam\MyMessangerExam\bin\Debug\AForge.Video.DirectShow.dll
-F:\Network programming\MyMessangerExam\MyMessangerExam\bin\Debug\AForge.Video.dll
-F:\Network programming\MyMessangerExam\MyMessangerExam\bin\Debug\AForge.xml
-F:\Network programming\MyMessangerExam\MyMessangerExam\bin\Debug\AForge.Video.xml
-F:\Network programming\MyMessangerExam\MyMessangerExam\bin\Debug\AForge.Video.DirectShow.xml
-F:\Network programming\MyMessangerExam\MyMessangerExam\obj\Debug\ViewElement\VideoCall.baml
-F:\Network programming\MyMessangerExam\MyMessangerExam\bin\Debug\Microsoft.Win32.Registry.dll
-F:\Network programming\MyMessangerExam\MyMessangerExam\bin\Debug\NAudio.Asio.dll
-F:\Network programming\MyMessangerExam\MyMessangerExam\bin\Debug\NAudio.Core.dll
-F:\Network programming\MyMessangerExam\MyMessangerExam\bin\Debug\NAudio.dll
-F:\Network programming\MyMessangerExam\MyMessangerExam\bin\Debug\NAudio.Midi.dll
-F:\Network programming\MyMessangerExam\MyMessangerExam\bin\Debug\NAudio.Wasapi.dll
-F:\Network programming\MyMessangerExam\MyMessangerExam\bin\Debug\NAudio.WinForms.dll
-F:\Network programming\MyMessangerExam\MyMessangerExam\bin\Debug\NAudio.WinMM.dll
-F:\Network programming\MyMessangerExam\MyMessangerExam\bin\Debug\System.Security.AccessControl.dll
-F:\Network programming\MyMessangerExam\MyMessangerExam\bin\Debug\System.Security.Principal.Windows.dll
-F:\Network programming\MyMessangerExam\MyMessangerExam\bin\Debug\Microsoft.Win32.Registry.xml
-F:\Network programming\MyMessangerExam\MyMessangerExam\bin\Debug\NAudio.xml
-F:\Network programming\MyMessangerExam\MyMessangerExam\bin\Debug\System.Security.AccessControl.xml
-F:\Network programming\MyMessangerExam\MyMessangerExam\bin\Debug\System.Security.Principal.Windows.xml
-F:\Network programming\MyMessangerExam\MyMessangerExam\obj\Debug\ClientProgram.g.cs
-F:\Network programming\MyMessangerExam\MyMessangerExam\obj\Debug\ClientProgram.baml
 F:\MyMessanger\MyMessanger\MyMessangerExam\MyMessangerExam\bin\Debug\MyMessangerExam.exe.config
 F:\MyMessanger\MyMessanger\MyMessangerExam\MyMessangerExam\bin\Debug\MyMessangerExam.exe
 F:\MyMessanger\MyMessanger\MyMessangerExam\MyMessangerExam\bin\Debug\MyMessangerExam.pdb
@@ -116,6 +48,7 @@ F:\MyMessanger\MyMessanger\MyMessangerExam\MyMessangerExam\obj\Debug\Registratio
 F:\MyMessanger\MyMessanger\MyMessangerExam\MyMessangerExam\obj\Debug\ViewElement\UserControlCustomBalloon.g.cs
 F:\MyMessanger\MyMessanger\MyMessangerExam\MyMessangerExam\obj\Debug\ViewElement\UserControlViewMessage.g.cs
 F:\MyMessanger\MyMessanger\MyMessangerExam\MyMessangerExam\obj\Debug\ViewElement\VideoCall.g.cs
+F:\MyMessanger\MyMessanger\MyMessangerExam\MyMessangerExam\obj\Debug\ViewElement\VideoCallCustomBalloonUserControl.g.cs
 F:\MyMessanger\MyMessanger\MyMessangerExam\MyMessangerExam\obj\Debug\App.g.cs
 F:\MyMessanger\MyMessanger\MyMessangerExam\MyMessangerExam\obj\Debug\MyMessangerExam_MarkupCompile.cache
 F:\MyMessanger\MyMessanger\MyMessangerExam\MyMessangerExam\obj\Debug\MyMessangerExam_MarkupCompile.lref
@@ -127,6 +60,7 @@ F:\MyMessanger\MyMessanger\MyMessangerExam\MyMessangerExam\obj\Debug\Registratio
 F:\MyMessanger\MyMessanger\MyMessangerExam\MyMessangerExam\obj\Debug\ViewElement\UserControlCustomBalloon.baml
 F:\MyMessanger\MyMessanger\MyMessangerExam\MyMessangerExam\obj\Debug\ViewElement\UserControlViewMessage.baml
 F:\MyMessanger\MyMessanger\MyMessangerExam\MyMessangerExam\obj\Debug\ViewElement\VideoCall.baml
+F:\MyMessanger\MyMessanger\MyMessangerExam\MyMessangerExam\obj\Debug\ViewElement\VideoCallCustomBalloonUserControl.baml
 F:\MyMessanger\MyMessanger\MyMessangerExam\MyMessangerExam\obj\Debug\MyMessangerExam.g.resources
 F:\MyMessanger\MyMessanger\MyMessangerExam\MyMessangerExam\obj\Debug\MyMessangerExam.Properties.Resources.resources
 F:\MyMessanger\MyMessanger\MyMessangerExam\MyMessangerExam\obj\Debug\MyMessangerExamClient.csproj.GenerateResource.cache
@@ -134,5 +68,3 @@ F:\MyMessanger\MyMessanger\MyMessangerExam\MyMessangerExam\obj\Debug\MyMessanger
 F:\MyMessanger\MyMessanger\MyMessangerExam\MyMessangerExam\obj\Debug\MyMessangerExamClient.csproj.CopyComplete
 F:\MyMessanger\MyMessanger\MyMessangerExam\MyMessangerExam\obj\Debug\MyMessangerExam.exe
 F:\MyMessanger\MyMessanger\MyMessangerExam\MyMessangerExam\obj\Debug\MyMessangerExam.pdb
-F:\MyMessanger\MyMessanger\MyMessangerExam\MyMessangerExam\obj\Debug\ViewElement\VideoCallCustomBalloonUserControl.g.cs
-F:\MyMessanger\MyMessanger\MyMessangerExam\MyMessangerExam\obj\Debug\ViewElement\VideoCallCustomBalloonUserControl.baml
