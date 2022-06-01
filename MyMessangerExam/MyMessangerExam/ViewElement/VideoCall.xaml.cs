@@ -30,6 +30,8 @@ namespace MyMessangerExam.ViewElement
         private bool IsBroadcasting = false;
         byte[] bytes;
         int Friend_Id;
+        bool CameraIsNotConnected;
+        Thread ThreadBroadcast;
         public VideoCall(UserConnection client, MyMessage message)
         {
             InitializeComponent();
@@ -67,17 +69,21 @@ namespace MyMessangerExam.ViewElement
             _filterInfoCollection = new FilterInfoCollection(FilterCategory.VideoInputDevice);
             if (_filterInfoCollection.Count > 0)
             {
+                CameraIsNotConnected = false;
                 _videoCaptureDevice = new VideoCaptureDevice(_filterInfoCollection[0].MonikerString);
                 _videoCaptureDevice.NewFrame += _videoCaptureDevice_NewFrame;
                 _videoCaptureDevice.Start();
             }
             else
             {
+                CameraIsNotConnected = true;
+                ThreadBroadcast = new Thread(Broadcast);
+                //ThreadBroadcast.IsBackground = true;
                 MyImage.Source = MyFunction.ConvertBytesToImage(bytes);
                 Task.Run(() =>
                 {
                     int n = 0;
-                    while (n < 12)
+                    while (n < 5)
                     {
                         udpVideo.SendMessage(bytes);
                         Thread.Sleep(5000);
@@ -93,9 +99,31 @@ namespace MyMessangerExam.ViewElement
             udpVideo?.Shutdown();
             voiceMessage?.StopVoiceMessage();
             _videoCaptureDevice?.SignalToStop();
-            TheEnd?.Invoke();      
+            ThreadBroadcast?.Resume();
+            ThreadBroadcast?.Abort();
+            TheEnd?.Invoke();
         }
-
+        private void Broadcast()
+        {
+            while (true)
+            {
+                var ms = new MemoryStream();
+                Bitmap bitmap;
+                Bitmap tempbitmap = (Bitmap)MyFunction.GetScreenBitmap().Clone();
+                bitmap = new Bitmap(tempbitmap, 800, 600);
+                bitmap?.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                var b = ms.ToArray();
+                udpVideo.SendMessage(b);
+                void c()
+                {
+                    MyImage.Source = MyFunction.ConvertBytesToImage(b);
+                }
+                if (!Dispatcher.CheckAccess())
+                    Dispatcher.Invoke(c);
+                else c();
+                Thread.Sleep(100);
+            }   
+        }
         private void _videoCaptureDevice_NewFrame(object sender, AForge.Video.NewFrameEventArgs eventArgs)
         {
             if (IsSendVideo)
@@ -189,11 +217,23 @@ namespace MyMessangerExam.ViewElement
         {
             if (IsBroadcasting)
             {
+                if (CameraIsNotConnected)
+                {
+                    ThreadBroadcast.Suspend();
+                    udpVideo.SendMessage(bytes);
+                    MyImage.Source = MyFunction.ConvertBytesToImage(bytes);
+                }
                 btnBroadcastScreen.Content = "✔🖥";
                 IsBroadcasting = false;
             }
             else
             {
+                if(CameraIsNotConnected)
+                {
+                    if (ThreadBroadcast.ThreadState == ThreadState.Unstarted)
+                        ThreadBroadcast.Start();
+                    else ThreadBroadcast.Resume();
+                }
                 btnBroadcastScreen.Content = "❌🖥";
                 IsBroadcasting = true;
             }
